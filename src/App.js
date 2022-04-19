@@ -1,14 +1,17 @@
-import { Link } from "react-router-dom";
+import {  Routes, Route } from "react-router-dom";
+import BlaBla from "./BlaBla";
+import Body from "./Body";
+import Layout from "./Layout";
+import Whatever from "./Whatever";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Link to="/">Back to homepage</Link>
-      </header>
-    </div>
+    <Routes>
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Body />} />
+      <Route path="whatever" element={<Whatever />} />
+    </Route>
+    <Route path="blabla" element={<BlaBla />} />
+  </Routes>
   );
 }
 
